@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact Form</title>
+	<link href="contact-form.css" rel="stylesheet">
+</head>
+<body>
+<header>
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="VideoJot_LandingPage.html"><img src="Logo Placeholder.png" alt="Logo"></a>
+      <a href="VideoJot_LandingPage.html"><h1 class="logo-title">VideoJot</h1></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Take Notes</a></li>
+        <li><a href="#">User Dashboard</a></li>
+        <li><a href="#">Socialize</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<hr class="vector-line">
+<section class="contact">
+	<div class="container">
+		<div class="form-container">
+			<h2 class="form-title">Contact Us</h2>
+			<form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+				<div class="form-group">
+					<label for="Name">Your name:</label>
+					<input type="text" id="Name" name="Name" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<label for="Email">Your email address:</label>
+					<input type="email" id="Email" name="Email" class="form-control" required>
+				</div>
+				<div class="form-group">
+					<label for="Message">Your message:</label>
+					<textarea id="Message" name="Message" class="form-control" rows="6" maxlength="3000" required></textarea>
+				</div>
+				<div class="form-group">
+					<button type="submit" id="fcf-button" class="btn btn-primary btn-lg btn-block">Send Message</button>
+				</div>
+				<div class="credit">
+					Simple HTML email form provided by <a href="https://www.majesticform.com" target="_blank">MajesticForm</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</section>
+<footer> 
+  <div class="header-container">
+    <div class="logo-container">
+      <a href="VideoJot_LandingPage.html"><img src="Logo Placeholder.png" alt="Logo"></a>
+      <a href="VideoJot_LandingPage.html"><h1 class="logo-title">VideoJot</h1></a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+    </nav>
+  </div>
+  <p>© 2023 VIDEOJOT. ALL RIGHTS RESERVED.</p>
+</footer>
+</body>
+</html>
