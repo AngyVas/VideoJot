@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flexbox Example - Method 1</title>
+  <style>
+    body {
+      font-family: Roboto, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f3f3f3;
+    }
+    
+    header {
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: flex-start;
+      height: 100vh;
+      padding: 0 20px;
+    }
+
+    .item {
+      flex: 1 1 100%;
+      padding: 20px;
+      background-color: white;
+      margin: 10px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: left;
+    }
+
+    .accordion {
+      background-color: #f9f9f9;
+      color: #333;
+      cursor: pointer;
+      padding: 25px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+      position: relative;
+      border-radius: 8px;
+      line-height: 20px;
+    }
+
+    .accordion:before {
+      content: '\25B8';
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: transform 0.3s ease;
+    }
+
+    .accordion.active:before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    .accordion:hover {
+      background-color: #e7e7e7;
+    }
+
+    .accordion.active {
+      background-color: #ddd;
+    }
+
+    .panel {
+      padding: 0 18px;
+      background-color: white;
+      display: none;
+      overflow: hidden;
+    }
+
+    .item p {
+      font-size: 15px;
+      line-height: 25px;
+    }
+
+    @media (max-width: 800px) {
+      .item {
+        flex-basis: 100%;
+      }
+    }
+      
+  </style>
+</head>
+
+<body>
+     <header class="header">
+      <h1>Welcome to Flexbox0 </h1>
+    </header>
+  <div class="container">
+    <div class="item">
+      <button class="accordion"><strong>What is the definition of social media?</strong></button>
+      <div class="panel">
+        <p>The speaker defines social media as platforms that allow people to connect and share content with each other online.</p>
+      </div>
+    </div>
+    <div class="item">
+      <button class="accordion"><strong>How is social media being used today?</strong></button>
+      <div class="panel">
+        <p>The speaker explains that social media is being used for a variety of purposes, such as staying in touch with friends and family, sharing news and information, and promoting businesses and brands.</p>
+      </div>
+    </div>
+    <div class="item">
+      <button class="accordion"><strong>What is the importance of social media for businesses?</strong></button>
+      <div class="panel">
+        <p>The speaker highlights the importance of social media for businesses, noting that it can be used to build brand awareness, connect with customers, and drive sales.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(accordion => {
+      accordion.addEventListener('click', function () {
+        this.classList.toggle('active');
+        const panel = this.nextElementSibling;
+        if (panel.style.display === 'block') {
+          panel.style.display = 'none';
+        } else {
+          panel.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
