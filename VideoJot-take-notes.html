@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Take Notes</title>
+<link rel="stylesheet" href="https://use.typekit.net/ici1sth.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+    
+<body>
+<style>
+@keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+body * {
+      animation: fadeIn 0.7s ease-in-out;
+    }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Proxima Nova', sans-serif;
+  color: #454545;
+  line-height: 1.7;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+    
+h4 {
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #8F8F8F;
+  margin-top: 40px;
+  margin-bottom: -10px;
+  margin-left: 3px;
+}
+    
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: auto;
+  margin-top: 30px;
+}
+
+.left-section {
+  float: left;
+  margin-left: 25px;
+  font-weight: 700;
+  margin-right: 60px;
+}
+
+.right-section {
+  float: right;
+}
+
+
+    
+.navbar a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #454545;
+  text-align: center;
+}
+
+.navbar .right-section a:hover {
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+
+<div class="navbar">
+  <div class="left-section">
+    <a class="active" href="index.html"><i class="fas fa-video"></i> VideoJot</a>
+  </div>
+  <div class="right-section">
+    <a href="VideoJot-take-notes.html">Take Notes</a>
+    <a href="VideoJot-user-dashboard.html">User Dashboard</a>
+    <a href="VideoJot-video-import.html">Video Imports</a>
+  </div>
+</div>
+  <style>
+    /* Sidenav styles */
+    .sidenav {
+      width: 200px;
+      background-color: #D3FEF1;
+    }
+
+    /* Dropdown styles */
+    .dropdown-btn {
+      padding: 20px 20px;
+      background-color: inherit;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      text-align: left;
+      outline: none;
+      transition: background-color 0.3s;
+    }
+
+    /* Dropdown arrow icon */
+    .dropdown-btn i {
+      float: right;
+      margin-top: 2px;
+    }
+    /* Trashcan icon */
+    .trash-btn {
+      float: right;
+      margin-top: 2px;
+      margin-right: 10px;
+      color: #777;
+    }
+
+    /* Dropdown content */
+    .dropdown-container {
+      display: none;
+      padding-left: 16px;
+      background-color: white;
+    }
+.tabs-container a:hover {
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+    /* Vertical tabs container */
+    .tabs-container {
+      padding-top: 20px;
+       padding-bottom: 20px;
+    }
+
+    /* Vertical tabs */
+    .tab-link {
+      display: block;
+      padding: 10px 10px;
+      color: #000;
+      text-decoration: none;
+    }
+
+   .tabs-container a {
+  padding: 20px 20px;
+  outline: none;\
+  pointer-events: auto;
+}
+
+    /* Active tab style */
+    .tab-link.active {
+      background-color: #ccc;
+    }
+      
+      
+.page  {
+margin-left: auto;
+margin-right: auto;
+margin-top: 2%;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: #D3FEF1;
+  height: calc(100vh - 90px);
+  top: 60%; /* Adjust the desired position from the
+}
+
+  .right {
+    margin-left: 460px; /* Adjust the margin to create space for the sidebar */
+  }
+  
+.video-wrapper {
+  width: 100%;
+  height: 400px; /* Adjust the height as desired */ 
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+.circle-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: teal;
+  color: white;
+  margin-right: 10px; /* Adjust the margin as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease; /* Add transition for smooth effect */
+}
+
+.circle-icon:hover {
+  transform: scale(1.1); /* Increase the size on hover */
+}
+
+      
+.accordion {
+        margin-top: 40px;
+        width: 800px;
+        font-family: 'Proxima Nova', sans-serif;
+      }
+
+      .accordion h4 {
+          font-weight: 500;
+          font-size: 14px;
+      }
+      
+      .accordion:hover h4 {
+  color: teal;
+}
+      
+    .item {
+      flex: 1 1 100%;
+      padding: 20px;
+      background-color: white;
+       margin: 20px 0;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: left;
+      outline: 0.5px solid #ccc;  
+    }
+
+.accordion__button {
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  font-weight: 600;
+  
+}
+
+.accordion__button:hover {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+
+.accordion__panel {
+  display: none;
+  background-color: #fff;
+  padding: 18px;
+  font-size: 15px;
+}
+
+.accordion__arrow {
+  float: right;
+}
+
+.accordion__button.active .accordion__arrow {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+      
+.container {
+  display: flex;
+  
+}
+
+      .left {
+            width: 200px;
+  background-color: #D3FEF1;
+  margin-top: 30px;
+      }
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+    .sidenav {
+    height: auto;
+    }
+    .dropdown-btn {
+        width: 600px;
+    }
+    
+  .right {
+    width: 400px;
+    order: -1;
+  }
+    
+    .accordion{
+    width: 400px
+    }
+
+    
+    .video-wrapper{
+  margin-top: 40px;
+ width: 100%;
+height: 100%;
+margin-bottom: -10px;
+}
+
+
+      }
+  </style>
+<div class="container">
+  <div class="left">
+  <div class="sidenav">
+    <button class="dropdown-btn">
+      New Note
+      <i class="fa fa-plus"></i>
+    </button>
+    <button class="dropdown-btn">
+      Folder 1
+      <i class="fa fa-caret-down"></i>
+      <i class="far fa-trash-alt trash-btn"></i>
+    </button>
+    <div class="dropdown-container">
+      <div class="tabs-container">
+        <a href="#" class="tab-link">Note 1</a>
+        <a href="#" class="tab-link">Note 2</a>
+        <a href="#" class="tab-link">Note 3</a>
+      </div>
+    </div>
+    <button class="dropdown-btn">
+      Folder 2
+      <i class="fa fa-caret-down"></i>
+      <i class="far fa-trash-alt trash-btn"></i>
+    </button>
+    <div class="dropdown-container">
+      <div class="tabs-container">
+        <a href="#" class="tab-link">Note 4</a>
+        <a href="#" class="tab-link">Note 5</a>
+        <a href="#" class="tab-link">Note 6</a>
+      </div>
+    </div>
+     <button class="dropdown-btn">
+      Folder 3
+      <i class="fa fa-caret-down"></i>
+      <i class="far fa-trash-alt trash-btn"></i>
+    </button>
+    <div class="dropdown-container">
+      <div class="tabs-container">
+        <a href="#" class="tab-link">Note 7</a>
+        <a href="#" class="tab-link">Note 8</a>
+        <a href="#" class="tab-link">Note 9</a>
+      </div>
+    </div> 
+  </div>
+  </div>
+<div class="page">
+<div class="right">
+  <div class="video-wrapper">
+  <video src="path/to/video.mp4" controls class="video"></video>
+</div>
+    <h4>april 18th 2023</h4>
+    <h3>
+        <div class="circle-icon"><i class="fas fa-robot"></i></div>
+        <strong class="ai">How Social Media Creates A Better World: Jan Rezab at TEDxSSE</strong></h3>
+
+<div class="accordion">
+ <h4 id="1">(00:24)</h4>
+  <div class="item">
+  <button class="accordion__button">
+   What is the definition of social media? <span class="accordion__arrow">&#9662;</span>
+  </button>
+  <div class="accordion__panel">
+    <p>The speaker defines social media as platforms that allow people to connect and share content with each other online.</p>
+  </div>
+</div>
+<h4 id="2">(02:36)</h4>
+ <div class="item">
+  <button class="accordion__button">
+    How is social media being used today?<span class="accordion__arrow">&#9662;</span>
+  </button>
+  <div class="accordion__panel">
+    <p>The speaker explains that social media is being used for a variety of purposes, such as staying in touch with friends and family, sharing news and information, and promoting businesses and brands.</p>
+  </div>
+</div>
+<h4 id="3">(05:15)</h4>
+ <div class="item">
+  <button class="accordion__button">
+    How do businesses use social media effectively? <span class="accordion__arrow">&#9662;</span>
+  </button>
+  <div class="accordion__panel">
+    <p>The speaker suggests that businesses should focus on creating valuable content that resonates with their audience, engaging with followers and customers, and using analytics to measure the success of their social media efforts.</p>
+  </div>
+</div>
+</div>
+</div>
+</div> 
+</div>
+<script>
+// Get all the accordion buttons
+const accordionButtons = document.querySelectorAll(".accordion__button");
+
+// Loop through each accordion button
+accordionButtons.forEach((button) => {
+  // Add a click event listener to each button
+  button.addEventListener("click", () => {
+    // Toggle the active class on the button
+    button.classList.toggle("active");
+
+    // Get the panel associated with the button
+    const panel = button.nextElementSibling;
+
+    // Toggle the display of the panel
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+});
+</script>
+
+
+<script>
+$(document).ready(function() {
+  var menu = $('.sidenav');
+  var menuOffset = menu.offset().top;
+
+  $(window).scroll(function() {
+    var scrollPos = $(window).scrollTop();
+    if (scrollPos >= menuOffset) {
+      menu.addClass('fixed');
+    } else {
+      menu.removeClass('fixed');
+    }
+  });
+});
+
+</script>
+  <script>
+    // Add click event listener to the dropdown buttons
+    var dropdownButtons = document.getElementsByClassName("dropdown-btn");
+    for (var i = 0; i < dropdownButtons.length; i++) {
+      dropdownButtons[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
+  </script>
+    <footer>
+  <style>
+    .footer {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+      padding: 10px;
+    }
+
+    .footer ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-align: right;
+      margin-right: 60px;
+    }
+
+    .footer li {
+      display: inline-block;
+    }
+
+    .footer a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #454545;
+  text-align: center;
+    }
+
+    .footer a:hover {
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+    }
+  </style>
+
+  <div class="footer">
+    <ul>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>

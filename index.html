@@ -1,102 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>VideoJot</title>
-<link rel="stylesheet" href="VideoJot_LandingPage.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VideoJot Home</title>
+  <link rel="stylesheet" type="text/css" href="VideoJot-style-guide.css">
+<link rel="stylesheet" href="https://use.typekit.net/ici1sth.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+    
 <body>
-<header>
-  <div class="header-container">
-    <div class="logo-container">
-      <a href="index.html"><img src="Logo Placeholder.png" alt="Logo"></a>
-      <a href="index.html"><h1 class="logo-title">VideoJot</h1></a>
+<style>
+.navbar {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  overflow: auto;
+  margin-top: 30px;
+}
+
+.left-section {
+  float: left;
+  margin-left: 40px;
+  font-weight: 700;
+}
+
+.right-section {
+  float: right;
+   margin-right: 60px;
+}
+
+.navbar a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #454545;
+  text-align: center;
+}
+
+.navbar .right-section a:hover {
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+</style>
+
+<div class="navbar">
+  <div class="left-section">
+    <a class="active" href="index.html"><i class="fas fa-video"></i> VideoJot</a>
+  </div>
+  <div class="right-section">
+    <a href="VideoJot-take-notes.html">Take Notes</a>
+    <a href="VideoJot-user-dashboard.html">User Dashboard</a>
+    <a href="VideoJot-video-import.html">Video Imports</a>
+  </div>
+</div>
+
+    
+<div class="container">
+  <div class="hero-section">
+    <h1 id="typing-effect" class="headline">Revolutionize Your YouTube Consumption With <span class="highlight">VideoJot</span></h1>
+    <p class="supporting-headline">Unlock maximum productivity with our cutting-edge note-taking tool powered by AI. Effortlessly capture and organize your insights, ideas, and knowledge from videos, while our advanced AI technology enhances your note-taking experience, making it smarter and more efficient than ever before.</p>
+    <div class="call-to-action">
+      <button class="cta-button">Get Started</button>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#">Take Notes</a></li>
-        <li><a href="VideoJot_UserDashboard.html">User Dashboard</a></li>
-        <li><a href="VideoJot_Socialize.html">Socialize</a></li>
-      </ul>
-    </nav>
   </div>
-</header>
-<hr class="vector-line">
-	
-<section class="intro">
-  <div class="container">
-    <h1>Revolutionize Your YouTube Consumption with Our Note-Taking Tool for Maximum Productivity!</h1>
-  </div>
-  <button>Start Maximizing Your Video Time</button>
-</section>
-	
+</div>
+<script>
+const text = "Revolutionize Your YouTube Consumption With VideoJot";
+const highlightText = "VideoJot";
+const delay = 40; // Delay in milliseconds between each character
+
+const element = document.getElementById("typing-effect");
+let index = 0;
+
+function typeText() {
+  if (index < text.length) {
+    element.textContent = text.substr(0, index + 1);
+    index++;
+    setTimeout(typeText, delay);
+  } else {
+    // Typing finished, apply the highlight
+    const highlightIndex = text.indexOf(highlightText);
+    const highlightedText = `<span class="highlight">${highlightText}</span>`;
+    const newText = text.substr(0, highlightIndex) + highlightedText + text.substr(highlightIndex + highlightText.length);
+    element.innerHTML = newText;
+  }
+}
+
+typeText();
+</script>
+
 <section class="features">
-  <h2>How We Can Improve Your Video Note-Taking Experience</h2>
-  <h4>BENEFICIAL FEATURES</h4>
-  <h4>DESCRIPTION</h4>
-  <hr class="vector-line2">
-  <div>
-	<div class="icon"> <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="26.5" cy="26.5" r="26.5" fill="#D9D9D9"/>
-</svg>
-</div>
-    <h3>Customize</h3>
-    <p class="customize">We offer note templates for YouTube videos and allow users to create and share custom templates.</p>
+<h2 class="typing">How We Can Improve Your Video Note-Taking Experience</h2>
+
+ <table>
+    <tr>
+      <th>Beneficial Features</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <td>
+        <div class="circle-icon"><i class="fas fa-cogs"></i></div>
+        <strong>Customize</strong>
+      </td>
+      <td>We offer note templates for YouTube videos and allow users to create and share custom templates</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="circle-icon"><i class="fab fa-youtube"></i></div>
+        <strong>YouTube API</strong>
+      </td>
+      <td>Importing and taking notes on YouTube videos is now easier than ever thanks to our seamless integration with the YouTube API.</td>
+    </tr>
+    <tr>
+      <td>
+        <div class="circle-icon"><i class="fas fa-robot"></i></div>
+        <strong class="ai">AI-Assisted</strong>
+      </td>
+      <td>We can use AI-assisted summarization on VideoJot to save time recapping video key points.</td>
+    </tr>
+  </table>
+    
+</section>
+<section class="how">
+<h2 class="typing">Discover How Easy It Is To Utilize Our Tools</h2>
+<div class="container">
+    <div class="item">
+      <button class="accordion"><strong>Take Notes</strong></button>
+      <div class="panel">
+        <div class="video-section">
+  <div class="video-wrapper">
+    <video src="path/to/video.mp4" controls></video>
   </div>
-  <hr class="vector-line2">
-  <div>
-	<div class="icon"> <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="26.5" cy="26.5" r="26.5" fill="#D9D9D9"/>
-</svg>
-</div>
-    <h3>YouTube API</h3>
-    <p class="api">Importing and taking notes on YouTube videos is now easier than ever thanks to our seamless integration with the YouTube API.</p>
+  <div class="text-content">
+    <h4>Step 1</h4>
+    <h3>Effortless Note-Taking for Meaningful Video Consumption</h3>
+    <p>With VideoJot, easily take detailed notes while watching YouTube videos. Capture key points, quotes, and ideas, and add your own thoughts and insights. Stay organized by categorizing notes and attaching relevant tags. VideoJot's intuitive interface makes note-taking a breeze, empowering you to retain valuable information.</p>
   </div>
-  <hr class="vector-line2">
-  <div>
-	<div class="icon"> <svg width="53" height="53" viewBox="0 0 53 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="26.5" cy="26.5" r="26.5" fill="#D9D9D9"/>
-</svg>
 </div>
-	  
-    <h3>AI-Assisted</h3>
-    <p class="ai">We can use AI-assisted summarization on VideoJot to save time recapping video key points.</p>
+      </div>
+    </div>
+    <div class="item">
+      <button class="accordion"><strong>Video Import&nbsp;</strong></button>
+      <div class="panel">
+       <div class="video-section">
+  <div class="video-wrapper">
+    <video src="path/to/video.mp4" controls></video>
   </div>
-  <hr class="vector-line2">
+  <div class="text-content">
+    <h4>Step 2</h4>
+    <h3>Seamless Video Integration for Your Personalized Library</h3>
+    <p>Seamlessly integrate your favorite YouTube content into your VideoJot library by using our convenient video import feature. Just paste the video link, and VideoJot will fetch the video details and add it to your collection. Whether it's educational tutorials, inspirational talks, or entertaining content, you can effortlessly curate your personalized video library.</p>
+  </div>
+</div>
+      </div>
+    </div>
+    <div class="item">
+      <button class="accordion"><strong>User Dashboard&nbsp;&nbsp;</strong></button>
+      <div class="panel">
+        <div class="video-section">
+  <div class="video-wrapper">
+    <video src="path/to/video.mp4" controls></video>
+  </div>
+  <div class="text-content">
+    <h4>Step 3</h4>
+    <h3>Streamlined Note Management: Organize and Access Your Notes with Ease</h3>
+    <p>The user dashboard provides organized note management. Access your notes by folders or view them based on the most recent entries. Stay in control and easily navigate through your collection for efficient retrieval and review. Simplify your note organization and enhance your overall user experience with VideoJot's user-friendly dashboard.</p>
+  </div>
+</div>
+      </div>
+    </div>
+
+  </div>
+<script>
+// Get all the accordion buttons
+const accordionButtons = document.querySelectorAll(".accordion");
+
+// Loop through each accordion button
+accordionButtons.forEach((button) => {
+  // Add a click event listener to each button
+  button.addEventListener("click", () => {
+    // Toggle the active class on the button
+    button.classList.toggle("active");
+
+    // Get the panel associated with the button
+    const panel = button.nextElementSibling;
+
+    // Toggle the display of the panel
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+});
+</script>
 </section>
 
-<section class="tools">
-<div class="content">
-<h2>Discover How Easy It Is To Utilize Our Tools </h2>
-<div class="container">
-		<div class="slider-container">
-			<img src="TakeNotes.png" alt="Slider Image 1" class="slider-image">
-		</div>
-		<div class="text-box">
-			<div class = "content-box">
-			<h4>TAKE NOTES</h4>
-			<h3 class = "red">Import YouTube Videos and Let Our AI Create Notes Automatically For You!</h3>
-			<p>Simply import a video and let our AI-Assistance  create a set of notes for you to review and reflect on what you've learned. But don't worry, you can still customize your notes and add your own insights to make them truly your own.</p>
-			</div>
-		</div>
-	</div>
-</div>
-</section>
-<footer> 
-  <div class="header-container">
-    <div class="logo-container">
-      <a href="VideoJot_LandingPage.html"><img src="Logo Placeholder.png" alt="Logo"></a>
-      <a href="VideoJot_LandingPage.html"><h1 class="logo-title">VideoJot</h1></a>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#">Privacy Policy</a></li>
-        <li><a href="#">Terms of Use</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
-    </nav>
+<footer>
+  <style>
+    .footer {
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+      padding: 10px;
+    }
+
+    .footer ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      text-align: right;
+      margin-right: 60px;
+    }
+
+    .footer li {
+      display: inline-block;
+    }
+
+    .footer a {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  color: #454545;
+  text-align: center;
+    }
+
+    .footer a:hover {
+  background-color: #f5f5f5;
+  border-radius: 30px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+    }
+  </style>
+
+  <div class="footer">
+    <ul>
+      <li><a href="#">Contact</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
   </div>
-  <p>© 2023 VIDEOJOT. ALL RIGHTS RESERVED.</p>
 </footer>
+
 </body>
 </html>
